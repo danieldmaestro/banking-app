@@ -1,0 +1,90 @@
+date,user-class,user-name,action,amount
+2023/02/24 12:43:43,staff,Kristey Adesoji,LOGOUT,NIL
+2023/02/24 12:44:26,staff,Kristey Adesoji,LOGIN,NIL
+2023/02/24 12:51:04,staff,Kristey Adesoji,LOGOUT,NIL
+2023/02/24 12:53:04,customer,Bola Tinubu,SIGN_UP,5966
+2023/02/24 13:32:10,customer,Bola Tinubu,LOGIN,NIL
+2023/02/24 13:32:21,customer,Bola Tinubu,VIEW_BALANCE,5966
+2023/02/24 13:34:19,customer,Bola Tinubu,LOGIN,NIL
+2023/02/24 13:34:24,customer,Bola Tinubu,WITHDRAWAL,200
+2023/02/24 13:34:32,customer,Bola Tinubu,LOGOUT,NIL
+2023/02/24 13:35:21,customer,Rachel Adesoji,SIGN_UP,7013
+2023/02/26 14:30:30,admin,Daniel Momodu,LOGIN,NIL
+2023/02/26 14:30:54,staff,Christianah Adesoji,STAFF CREATED,NIL
+2023/02/26 14:31:42,admin,Daniel Momodu,LOGOUT,NIL
+2023/02/26 14:42:46,customer,Banky Durbliyu,SIGN_UP,10217
+2023/02/26 14:43:07,customer,Banky Durbliyu,LOGIN,NIL
+2023/02/26 14:43:16,customer,Banky Durbliyu,LOGOUT,NIL
+2023/02/26 15:09:21,staff,Christianah Adesoji,LOGIN,NIL
+2023/02/26 15:10:41,staff,Christianah Adesoji,LOGIN,NIL
+2023/02/26 15:12:35,staff,Christianah Adesoji,LOGIN,NIL
+2023/02/26 15:24:55,staff,Christianah Adesoji,LOGIN,NIL
+2023/02/26 15:30:08,admin,Daniel Momodu,LOGIN,NIL
+2023/02/26 15:30:25,staff,Christianah Adesoji,STAFF CREATED,NIL
+2023/02/26 15:30:46,admin,Daniel Momodu,LOGOUT,NIL
+2023/02/26 15:31:07,staff,Christianah Adesoji,LOGIN,NIL
+2023/02/26 15:35:51,admin,Daniel Momodu,LOGIN,NIL
+2023/02/26 15:36:08,staff,Christianah Adesoji,STAFF CREATED,NIL
+2023/02/26 15:36:36,admin,Daniel Momodu,LOGOUT,NIL
+2023/02/26 15:37:00,staff,Christianah Adesoji,LOGIN,NIL
+2023/02/26 15:37:13,staff,Christianah Adesoji,LOGOUT,NIL
+2023/02/26 15:44:27,admin,Daniel Momodu,LOGIN,NIL
+2023/02/26 15:44:49,staff,Christianah Adesoji,STAFF CREATED,NIL
+2023/02/26 15:45:09,admin,Daniel Momodu,LOGOUT,NIL
+2023/02/26 15:45:26,staff,Christianah Adesoji,LOGIN,NIL
+2023/02/26 15:52:10,admin,Daniel Momodu,LOGIN,NIL
+2023/02/26 15:52:38,staff,Christianah Adesoji,STAFF CREATED,NIL
+2023/02/26 15:53:09,admin,Daniel Momodu,LOGOUT,NIL
+2023/02/26 15:56:44,staff,Christianah Adesoji,LOGIN,NIL
+2023/02/26 15:57:00,staff,Christianah Adesoji,LOGOUT,NIL
+2023/02/26 16:17:16,admin,Daniel Momodu,LOGIN,NIL
+2023/02/26 16:17:31,staff,kristey Adesoji,STAFF CREATED,NIL
+2023/02/26 16:17:41,admin,Daniel Momodu,LOGOUT,NIL
+2023/02/26 16:17:57,staff,kristey Adesoji,LOGIN,NIL
+2023/02/26 20:41:00,admin,Daniel Momodu,LOGIN,NIL
+2023/02/26 20:41:18,staff,Kristey Adesoji,STAFF CREATED,NIL
+2023/02/26 20:42:20,admin,Daniel Momodu,LOGOUT,NIL
+2023/02/26 20:43:26,staff,Kristey Adesoji,LOGIN,NIL
+2023/02/26 20:47:45,staff,Kristey Adesoji,LOGOUT,NIL
+2023/02/26 20:55:17,customer,Banky Durbliyu,LOGIN,NIL
+2023/02/27 08:44:33,customer,Afolabi Adepena,SIGN_UP,8958
+2023/02/27 08:44:59,customer,Afolabi Adepena,LOGIN,NIL
+2023/02/27 08:48:32,customer,Afolabi Adepena,LOGIN,NIL
+2023/02/27 08:50:41,customer,Afolabi Adepena,LOGIN,NIL
+2023/02/27 08:50:45,customer,Afolabi Adepena,WITHDRAWAL,200
+2023/02/27 08:52:06,customer,Afolabi Adepena,LOGIN,NIL
+2023/02/27 08:52:10,customer,Afolabi Adepena,WITHDRAWAL,200
+2023/02/27 08:52:26,customer,Afolabi Adepena,WITHDRAWAL,500
+2023/02/27 08:59:25,admin,Daniel Momodu,LOGIN,NIL
+2023/02/27 08:59:40,staff,Kristey Adesoji,STAFF CREATED,NIL
+2023/02/27 08:59:45,admin,Daniel Momodu,LOGOUT,NIL
+2023/02/27 09:00:07,staff,Kristey Adesoji,LOGIN,NIL
+2023/02/27 09:00:44,staff,Kristey Adesoji,LOGOUT,NIL
+2023/02/27 09:08:57,admin,Daniel Momodu,LOGIN,NIL
+2023/02/27 09:09:18,staff,Kristey Adesoji,STAFF CREATED,NIL
+2023/02/27 09:09:23,admin,Daniel Momodu,LOGOUT,NIL
+2023/02/27 09:09:44,staff,Kristey Adesoji,LOGIN,NIL
+2023/02/27 09:10:10,staff,Kristey Adesoji,LOGIN,NIL
+2023/02/27 09:11:23,admin,Daniel Momodu,LOGIN,NIL
+2023/02/27 09:11:36,staff,Kristey Adesoji,STAFF CREATED,NIL
+2023/02/27 09:11:39,admin,Daniel Momodu,LOGOUT,NIL
+2023/02/27 09:12:42,admin,Daniel Momodu,LOGIN,NIL
+2023/02/27 09:13:53,admin,Daniel Momodu,LOGIN,NIL
+2023/02/27 09:14:05,staff,Kristey Adesoji,STAFF CREATED,NIL
+2023/02/27 09:15:20,admin,Daniel Momodu,LOGIN,NIL
+2023/02/27 09:15:31,staff,Kristey Adesoji,STAFF CREATED,NIL
+2023/02/27 09:15:37,admin,Daniel Momodu,LOGOUT,NIL
+2023/02/27 09:16:02,staff,Kristey Adesoji,LOGIN,NIL
+2023/02/27 09:16:12,staff,Kristey Adesoji,LOGOUT,NIL
+2023/02/27 09:29:42,customer,Afolabi Adepena,SIGN_UP,13089
+2023/02/27 09:29:56,customer,Afolabi Adepena,LOGIN,NIL
+2023/02/27 09:30:54,customer,Afolabi Adepena,LOGIN,NIL
+2023/02/27 09:30:55,customer,Afolabi Adepena,VIEW_BALANCE,13089
+2023/02/27 09:40:49,customer,Afolabi Adepena,LOGOUT,NIL
+2023/02/27 09:41:35,customer,Yetunde Alabi,SIGN_UP,13261
+2023/02/27 09:41:54,customer,Yetunde Alabi,LOGIN,NIL
+2023/02/27 09:42:32,customer,Afolabi Adepena,DEPOSIT,3000
+2023/02/27 09:42:32,customer,Yetunde Alabi,TRANSFER,3000
+2023/02/27 09:42:56,customer,Yetunde Alabi,WITHDRAWAL,100
+2023/02/27 09:43:03,customer,Yetunde Alabi,VIEW_BALANCE,10161
+2023/02/27 09:43:10,customer,Yetunde Alabi,LOGOUT,NIL
