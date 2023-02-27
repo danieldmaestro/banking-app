@@ -11,22 +11,25 @@ import locale
 
 print(locale.setlocale(locale.LC_ALL, "en-NG"))
 
-def find_user_customer(filepath, user):
+def find_user_customer(user, filepath = "customer_info.csv"):
     with open(filepath) as file:
         reader_obj = reader(file)
         for row in reader_obj:
             if user in row:
                 customer = Customer(*row)
-        return customer
+                return customer
+        else:
+            return ""
 
-
-def find_user_staff(filepath, user):
+def find_user_staff(user, filepath = "staff_info.csv"):
     with open(filepath) as file:
         reader_obj = reader(file)
         for row in reader_obj:
             if user in row:
                 staff = Staff(*row)
-        return staff
+                return staff
+        else:
+            return ""
 
 
 with open("customer_info.csv") as file:
@@ -250,9 +253,7 @@ class Staff:
         print(f"Dear, {self.f_name}, you default password has been successfully changed.")
 
     def login(self, username, password):
-        if self.is_suspended == "suspended":
-            print("You are currently suspended. Refer to Admin")
-        elif username == self.username and password == decryptor(self.password):
+        if username == self.username and password == decryptor(self.password):
             self.is_loggedin = True
             print("You have successfully logged in.")
             csvlogger.staff([self.full_name, "LOGIN", "NIL"])
@@ -291,13 +292,14 @@ class Admin:
         with open('staff_info.csv') as file:
             reader_obj = reader(file)
             for row in reader_obj:
-                if self.f_name in row:
+                if staff.f_name in row:
                     c = row
 
         index = s_info.index(c) - 1
         df = pd.read_csv("staff_info.csv")
         df.loc[index, 'suspension_status'] = "suspended"
         df.to_csv("staff_info.csv", index=False)
+        print(f"{staff.f_name} is hereby suspended.")
 
     def end_suspension(self, staff):
         staff.is_suspended = "not_suspended"
@@ -310,13 +312,14 @@ class Admin:
         with open('staff_info.csv') as file:
             reader_obj = reader(file)
             for row in reader_obj:
-                if self.f_name in row:
+                if staff.f_name in row:
                     c = row
 
         index = s_info.index(c) - 1
         df = pd.read_csv("staff_info.csv")
         df.loc[index, 'suspension_status'] = "not_suspended"
         df.to_csv("staff_info.csv", index=False)
+        print(f"Dear {staff.f_name}, your suspension status has been lifted.")
 
     def login(self, username, password):
         if username == self.username and password == decryptor(self.password):
@@ -373,30 +376,34 @@ while app_state:
                             # SUSPEND STAFF 
                             elif action == "2":
                                 s_staff = input("Input Staff username: ")
-                                with open("staff_info.csv") as file:
-                                    reader_obj = reader(file)
-                                    for row in reader_obj:
-                                        if s_staff in r:
-                                            staff = Staff(*row)
-                                # if staff is already suspended, exception message
-                                if staff.is_suspended == "suspended":
-                                    print("Staff is already suspended.")
+                                staff = find_user_staff(s_staff)
+
+                                if staff:
+                                    # if staff is already suspended, exception message
+                                    if staff.is_suspended == "suspended":
+                                        print("Staff is already suspended.")
+                                        break
+                                    else:
+                                        admin.suspension(staff)
+                                    break
                                 else:
-                                    admin.suspension(staff)
-                                break
+                                    print("Staff not found.")
+                                    break
                             # REMOVE STAFF FROM SUSPENSION
                             elif action == "3":
                                 s_staff = input("Input Staff username: ")
-                                with open("staff_info.csv") as file:
-                                    reader_obj = reader(file)
-                                    for row in reader_obj:
-                                        if s_staff in r:
-                                            staff = Staff(*row)
-                                if staff.is_suspended == "suspended":
-                                    admin.end_suspension(staff)
+                                staff = find_user_staff(s_staff)
+
+                                if staff:
+                                    if staff.is_suspended == "suspended":
+                                        admin.end_suspension(staff)
+                                        break
+                                    else:
+                                        print("Staff is not suspended")
+                                    break
                                 else:
-                                    print("Staff is not suspended")
-                                break
+                                    print("Staff not found.")
+                                    break
                             # VIEW ALL STAFF AND CUSTOMERS
                             elif action == "4":
                                 # print all staff
@@ -434,20 +441,24 @@ while app_state:
                         username = input("Type in your username: ")
                         password = input("Type in your password: ")
 
-                        staff_details = ""
-
                         with open("staff_info.csv") as file:
                             reader_obj = reader(file)
                             for row in reader_obj:
                                 if username in row and encryptor(password) in row:
                                     staff_details = row
+                                    break
+                            else:
+                                staff_details = ""
                                     
                             if staff_details:
                                 staff = Staff(*staff_details)
-                                staff.login(username, password)
-                                if staff.is_loggedin:
-                                    if staff.is_suspended == "suspended":
+                                if staff.is_suspended == "suspended":
+                                        print("You are currently suspended. Refer to admin.")
                                         break
+                                else:
+                                    staff.login(username, password)
+
+                                if staff.is_loggedin:
                                     # changed default password on first login
                                     if staff.default_p == "not_changed":
                                         print(f"Dear, {staff.f_name}, please change your default password.")
@@ -460,31 +471,29 @@ while app_state:
                                 print("Wrong credentials. Try again.")
                                 
                     while staff.is_loggedin:
+
                         while True:
                             action = input(
                                 f"Welcome, {staff.f_name}.\nWhat do you want to do? Here are the inputs.\n\n1. View customer balance\n2. Take customer deposit\n0. Logout\n\nInput here: ")
                             if action == "1":
                                 c_email = input("Customer Email Address: ")
-                                with open("customer_info.csv") as file:
-                                    reader_obj = reader(file)
-                                    for row in reader_obj:
-                                        if c_email in row:
-                                            customer = Customer(*row)
+                                customer = find_user_customer(c_email)
                                 if customer:
                                     staff.view_c_balance(customer)
                                     break
                                 else:
                                     print("Customer not found.")
+                                    break
                             elif action == "2":
                                 c_email = input("Customer Email Address: ")
                                 c_deposit = int(input("Amount to deposit: "))
-                                customer = find_user_customer(
-                                    "customer_info.csv", c_email)
+                                customer = find_user_customer(c_email)
                                 if customer:
                                     staff.customer_deposit(c_deposit, customer)
                                     break
                                 else:
                                     print("Customer not found.")
+                                    break
                             elif action == "0":
                                 staff.logout()
                                 break
@@ -500,10 +509,15 @@ while app_state:
                             for row in reader_obj:
                                 if encryptor(pin) in row and email in row:
                                     customer = Customer(*row)
+                                    break
+                            else:
+                                customer = ""
                         if customer:
                             customer.login(email, pin)
                             if customer.is_loggedin:
                                 break
+                        else:
+                            print("Wrong Credentials")
 
                     while customer.is_loggedin:
                         while True:
@@ -520,10 +534,12 @@ while app_state:
                                 r_email = input("Email address of Recipient: ")
                                 amount = int(
                                     input("How much do you want to transfer: "))
-                                recipient = find_user_customer(
-                                    "customer_info.csv", r_email)
-                                customer.transfer(amount, recipient)
-                                break
+                                recipient = find_user_customer(r_email)
+                                if recipient:
+                                    customer.transfer(amount, recipient)
+                                    break
+                                else:
+                                    print("Recipient not found.")
                             elif action == "0":
                                 customer.logout()
                                 break

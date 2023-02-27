@@ -91,3 +91,14 @@ date,user-class,user-name,action,amount
 2023/02/27 10:10:54,staff,Kristey Adesoji,LOGIN,NIL
 2023/02/27 10:12:07,staff,Kristey Adesoji,LOGIN,NIL
 2023/02/27 10:12:10,staff,Kristey Adesoji,LOGOUT,NIL
+2023/02/27 11:47:57,staff,Kristey Adesoji,LOGIN,NIL
+2023/02/27 11:48:11,staff,Kristey Adesoji,VIEW_BALANCE(Yetunde),10161
+2023/02/27 11:48:25,staff,Kristey Adesoji,VIEW_BALANCE(Yetunde),10161
+2023/02/27 11:48:48,customer,Yetunde Alabi,DEPOSIT,300
+2023/02/27 11:48:48,staff,Kristey Adesoji,DEPOSIT(Yetunde),300
+2023/02/27 11:49:18,staff,Kristey Adesoji,LOGOUT,NIL
+2023/02/27 11:50:03,admin,Daniel Momodu,LOGIN,NIL
+2023/02/27 11:52:55,admin,Daniel Momodu,LOGIN,NIL
+2023/02/27 11:57:17,admin,Daniel Momodu,LOGOUT,NIL
+2023/02/27 12:01:33,staff,Kristey Adesoji,LOGIN,NIL
+2023/02/27 12:02:39,staff,Kristey Adesoji,LOGOUT,NIL
