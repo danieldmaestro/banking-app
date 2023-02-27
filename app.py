@@ -454,6 +454,8 @@ while app_state:
                                         new_pword = input("Type in new password: ")
                                         staff.setpassword(new_pword)
                                         break
+                                    else:
+                                        break
                             else:
                                 print("Wrong credentials. Try again.")
                                 
