@@ -102,3 +102,4 @@ date,user-class,user-name,action,amount
 2023/02/27 11:57:17,admin,Daniel Momodu,LOGOUT,NIL
 2023/02/27 12:01:33,staff,Kristey Adesoji,LOGIN,NIL
 2023/02/27 12:02:39,staff,Kristey Adesoji,LOGOUT,NIL
+2023/03/05 09:22:21,customer,Precious Adesoji,SIGN_UP,9016

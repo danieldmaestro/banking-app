@@ -8,6 +8,7 @@ import pandas as pd
 from decryptor import decryptor
 from encryptor import encryptor
 import locale
+import re
 
 print(locale.setlocale(locale.LC_ALL, "en-NG"))
 
@@ -565,8 +566,21 @@ while app_state:
                     break
                 else:
                     print("Wrong Input")
-            pin = encryptor(input("Please put in a secure 6-digit pin: "))
-            email = input("Please input your email: ")
+            # validation for pin length and type
+            while True:      
+                pin = encryptor(input("Please put in a secure 6-digit pin: "))
+                if len(pin) == 6 and re.match("^(\d+)$", pin):
+                    break
+                else:
+                    print("Enter a valid 6-digit pin.")
+            # validation for email
+            while True:
+                email = input("Please input your email: ")
+                if re.match("^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$", email):
+                    break
+                else:
+                    print("Enter a valid email address, please.")
+
             customer = Customer(f_name, l_name, phone_no,
                                 acct_type, pin, email)
             break
